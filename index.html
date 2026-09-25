@@ -335,6 +335,58 @@ p{margin:0}
 @keyframes steam{0%{opacity:0; transform:translateY(6px)}50%{opacity:1}100%{opacity:0; transform:translateY(-6px)}}
 .journey #journeySvg .route{stroke-dasharray:1 12}
 
+
+
+.mlegend{display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; font-size:.88rem; color:var(--band-ink); margin-bottom:.6rem; min-height:1.4em}
+.mlegend i{display:inline-block; width:13px; height:13px; border-radius:50%; margin-right:.45rem; vertical-align:-2px; border:2px solid #15222F}
+#morphSvg{background:var(--band); border-radius:12px}
+.mdot{cursor:pointer}
+.mfind{display:flex; gap:.9rem; align-items:flex-start; margin-top:1rem; background:var(--band); border-radius:12px; padding:.9rem 1rem; min-height:4.4rem}
+.mfind b{flex:none; display:grid; place-items:center; width:2rem; height:2rem; border-radius:50%; color:var(--note-ink); font-weight:800; border:2px solid #15222F}
+.mfind p{color:var(--band-ink); font-weight:600; font-size:1.02rem}
+.mfind span{display:block; color:var(--band-muted); font-size:.9rem; margin-top:.2rem}
+
+
+.cold-demo{grid-template-columns:1.5fr 1fr}
+.cold-demo .cold-toggle{margin:1rem 0 .6rem}
+.cold-demo .cold-toggle button[aria-pressed="true"]{background:var(--note-y); color:var(--note-ink)}
+.cold-say{color:var(--band-ink)!important; font-size:.95rem; line-height:1.5; min-height:4.5em}
+.cold-demo .meter{gap:1.4rem}
+.cold-demo .meter b{font-size:2.2rem}
+.cold-key{display:flex; flex-direction:column; gap:.35rem; font-size:.85rem; color:var(--band-muted); margin-top:.2rem}
+.cold-key span{display:flex; align-items:center; gap:.5rem}
+.cold-demo .cold-key svg{width:20px!important; height:20px!important; flex:none; background:none!important; border-radius:0}
+#map .mlayer{transition:opacity .6s}
+
+/* ACS plain language */
+.morph-steps button em{font-style:normal; display:inline-grid; place-items:center; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--band-line); color:var(--band-ink); font-size:.8rem; margin-right:.45rem}
+.morph-steps button[aria-selected="true"] em{background:var(--note-l); color:var(--note-ink)}
+.mstep-note{color:var(--band-ink); font-size:1.02rem; line-height:1.55; margin:.9rem 0 1rem; min-height:3.2em; max-width:70ch}
+.mboard{position:relative; height:480px; background:var(--band); border-radius:12px; overflow:hidden; background-image:radial-gradient(var(--band-line) 1px, transparent 1.2px); background-size:18px 18px}
+.mhead{position:absolute; top:3%; font-family:var(--display); font-weight:700; font-size:.95rem; color:var(--band-ink); padding-bottom:.35rem; border-bottom:3px solid; transition:opacity .5s, left .8s; text-align:center}
+.mnote{position:absolute; color:var(--note-ink); border-radius:3px; padding:.55rem .65rem; box-shadow:0 8px 14px -8px rgba(0,0,0,.55); transition:left .9s cubic-bezier(.6,0,.2,1), top .9s cubic-bezier(.6,0,.2,1), width .9s, transform .9s, background .6s}
+.mnote p{font-size:.85rem; line-height:1.3; font-weight:600}
+.mnote .own{display:block; max-height:0; overflow:hidden; font-size:.72rem; font-weight:700; margin-top:0; opacity:0; transition:max-height .5s, opacity .5s, margin .5s}
+.mnote.owned .own{max-height:2em; opacity:1; margin-top:.3rem}
+.mnote.owned .own::before{content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--note-ink); margin-right:.35rem; vertical-align:1px}
+.mboard.s3 .mnote p{font-size:.78rem}
+@media (max-width:760px){.mboard{height:640px}.mnote p{font-size:.72rem}.mboard.s3 .mnote p{font-size:.66rem}.mhead{font-size:.72rem}}
+.plainbox,.toldbox{border-radius:10px; padding:.8rem 1rem; margin-top:.8rem}
+.plainbox{background:var(--band)}
+.toldbox{border:1px dashed var(--note-l)}
+.plainbox small,.toldbox small{display:block; font-size:.75rem; font-weight:700; color:var(--note-l); margin-bottom:.2rem}
+.plainbox p,.toldbox p{color:var(--band-ink)!important; font-size:.95rem; line-height:1.5}
+.kit-cap{color:var(--band-muted); font-size:.85rem; margin-top:1rem}
+.gtable{display:grid; gap:.45rem; font-size:.88rem}
+.gth,.gtr{display:grid; grid-template-columns:1fr 1fr 130px; gap:.7rem; align-items:center}
+.gth span{color:var(--band-muted); font-size:.75rem; font-weight:700}
+.gtr{background:var(--band); border-radius:8px; padding:.6rem .8rem; color:var(--band-ink)}
+.gtr span:first-child{color:#F4A99A}
+.gtr span:nth-child(2){color:#B5E3A1}
+.gtr i{justify-self:start; font-style:normal; font-size:.75rem; padding:.2rem .55rem; border-radius:999px; background:rgba(205,185,245,.15); color:var(--note-l); white-space:nowrap}
+@media (max-width:600px){.gth{display:none}.gtr{grid-template-columns:1fr}}
+.grid2.plain .ax,.grid2.plain .ax2{font-size:.78rem}
+
 /* Nav */
 .brand .role{font-family:var(--body); font-weight:500; font-size:.95rem; color:var(--muted); margin-left:.3rem}
 nav{display:flex; justify-content:space-between; align-items:center; padding:1.4rem 0; position:relative; z-index:3}
@@ -1064,15 +1116,25 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
           <div class="step win"><h4>What changed</h4><p>Nearby postcode orders now go out together on shared runs, and outlying areas get extra time built in. The recurring complaint pattern was resolved.</p></div>
         </div>
 
-        <div class="demo">
-          <svg id="map" viewBox="0 0 600 340" role="img" aria-label="Illustration of delivery orders being grouped into runs from a central shop"></svg>
+        <div class="demo cold-demo">
+          <svg id="map" viewBox="0 0 600 340" role="img" aria-label="Map of the Blue Lagoon shop and delivery orders across East Kilbride postcode areas, before and after grouping orders into runs"></svg>
           <div>
-            <h4>See the idea in action</h4>
-            <p>Every dot is an order. Before, each one was its own trip. Grouping nearby postcodes turns scattered trips into a few efficient runs.</p>
+            <h4>See the fix in action</h4>
+            <p>Every house is a delivery order from the Blue Lagoon shop, labelled by postcode area around East Kilbride. Switch between how deliveries worked before and after the change.</p>
+            <div class="cap-toggle cold-toggle" role="group" aria-label="Delivery method">
+              <button type="button" data-m="before" aria-pressed="true">Before</button>
+              <button type="button" data-m="after" aria-pressed="false">After</button>
+            </div>
+            <p class="cold-say" id="coldSay"></p>
             <div class="meter">
               <div><b id="trips">0</b><span>trips out of the shop</span></div>
+              <div><b id="coldN">0</b><span>orders at risk of arriving cold</span></div>
             </div>
-            <button class="btn btn-primary" id="groupBtn" type="button">Group into delivery runs</button>
+            <div class="cold-key">
+              <span><svg viewBox="0 0 20 20"><path d="M3 10 L10 3 L17 10 V17 H3 Z" fill="#F9A64B" stroke="#15222F" stroke-width="1.5"/></svg>Arrives hot</span>
+              <span><svg viewBox="0 0 20 20"><path d="M3 10 L10 3 L17 10 V17 H3 Z" fill="#7FB3E8" stroke="#15222F" stroke-width="1.5"/></svg>At risk of arriving cold</span>
+              <span><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#fff" stroke="#15222F" stroke-width="1.5"/><path d="M10 6 V10 L13 12" stroke="#15222F" stroke-width="1.5" fill="none"/></svg>Extra time planned</span>
+            </div>
             <p class="fine">Illustrative model of the method, not real order data.</p>
           </div>
         </div>
@@ -1225,19 +1287,21 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
         <div class="morph">
           <div class="ex-head">
             <h4>From voices to a roadmap</h4>
-            <p>How eleven interviews became four recommendations. Each dot is a finding from the research. Step through, or let it play.</p>
+            <p>Each numbered dot is one finding from the staff interviews. Watch how they were sorted, or tap a step. Tap any dot to read what it says.</p>
           </div>
           <div class="morph-steps" id="morphSteps" role="tablist">
-            <button type="button" data-s="0">Stakeholders</button><button type="button" data-s="1">Themes</button><button type="button" data-s="2">Gap matrix</button><button type="button" data-s="3">Roadmap</button>
+            <button type="button"><em>1</em>Listen</button><button type="button"><em>2</em>Group into themes</button><button type="button"><em>3</em>Assign owners</button><button type="button"><em>4</em>Recommend</button>
           </div>
-          <svg id="morphSvg" viewBox="0 0 640 300" role="img" aria-label="Research findings moving from a stakeholder network into themes, a gap matrix and a roadmap"></svg>
-          <p class="insight" id="morphNote"></p>
+          <p class="mstep-note" id="morphNote"></p>
+          <div class="mlegend" id="mLegend"></div>
+          <svg id="morphSvg" viewBox="0 0 640 330" role="img" aria-label="Interview findings shown as numbered dots, moving from a stakeholder network into themes, owners and recommendations"></svg>
+          <div class="mfind" id="mFind"></div>
         </div>
 
         <div class="toolkit">
           <div class="ex-head">
-            <h4>Five methods, one picture</h4>
-            <p>Each technique answered a different question. Step through them to see what each one produced.</p>
+            <h4>The five methods I used, explained simply</h4>
+            <p>Each one answered a different question. Tap through them. No technical background needed.</p>
           </div>
           <div class="kit-steps" id="kitSteps" role="tablist"></div>
           <div class="kit-panel" id="kitPanel"></div>
@@ -1554,7 +1618,7 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
   var cmap = '<svg class="cmap" viewBox="0 0 520 250" role="img" aria-label="Cognitive map linking options to strategies to goals for the IT team">'
     + '<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9FB0C2"/></marker></defs>'
     + '<g font-family="Public Sans, sans-serif" font-size="11" fill="#E8EEF3">'
-    + '<text x="0" y="22" fill="#9FB0C2" font-size="10">Goals</text><text x="0" y="112" fill="#9FB0C2" font-size="10">Strategies</text><text x="0" y="202" fill="#9FB0C2" font-size="10">Options</text>'
+    + '<text x="0" y="22" fill="#9FB0C2" font-size="10">Goal</text><text x="0" y="112" fill="#9FB0C2" font-size="10">How</text><text x="0" y="202" fill="#9FB0C2" font-size="10">First steps</text>'
     + '<g stroke="#9FB0C2" stroke-width="1.3" fill="none" marker-end="url(#ah)">'
     + '<path d="M150 185 C150 150 150 140 150 124"/><path d="M270 185 C270 150 300 140 300 124"/><path d="M430 185 C430 150 440 140 440 124"/>'
     + '<path d="M150 98 C150 70 150 50 150 34"/><path d="M300 98 C300 70 300 50 300 34"/><path d="M300 98 C330 70 420 50 440 34"/><path d="M440 98 C440 70 440 50 440 34"/><path d="M300 98 C250 70 180 50 160 34"/>'
@@ -1568,32 +1632,41 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
     + '<g fill="#9FB0C2"><text x="150" y="200" text-anchor="middle">Coding bootcamps</text><text x="270" y="200" text-anchor="middle">Success stories</text><text x="430" y="200" text-anchor="middle">Rewrite job adverts</text></g>'
     + '</g></svg>';
   var kit = [
-    {t:'Interviews', s:'Listen first', h:'11 people, 6 perspectives', p:'Fifteen minute one to one interviews with staff from customer services, finance, operations, IT and business development, plus the COO. Consent, anonymity and ethics approval came first.', q:'The will was there. Time and focus were the real barriers.',
-      v:'<div class="big-n"><div><b>11</b><span>interviews</span></div><div><b>5</b><span>departments</span></div><div><b>1</b><span>COO</span></div></div>'},
-    {t:'Gap analysis', s:'Current vs desired', h:'17 gaps, each with an owner', p:'Every gap was written as current state, desired state, the action needed and the team responsible, so nothing ended as a vague observation.', q:'Policies existed. Awareness of them didn\u2019t.',
-      v:'<div class="gaps">'
-        +'<div class="gap"><b>Leadership pipeline</b><span>Women hold 10% of senior roles</span><i>HR and leadership</i></div>'
-        +'<div class="gap"><b>Awareness</b><span>Staff unaware of existing initiatives</span><i>HR</i></div>'
-        +'<div class="gap"><b>External over internal hiring</b><span>Internal female talent overlooked</span><i>HR and leadership</i></div>'
-        +'<div class="gap"><b>Retention</b><span>Senior women leaving, causes unknown</span><i>HR</i></div>'
-        +'<div class="gap"><b>No feedback loop</b><span>No surveys on gender equality</span><i>HR</i></div></div>'},
-    {t:'Stakeholder grid', s:'Who to engage how', h:'Power meets interest', p:'Mapping each department by power and interest showed who needed to champion change and who just needed to be kept informed.', q:'The COO and business development were the players to win over.',
-      v:'<div class="grid2"><span class="ax">Interest</span>'
-        +'<div class="quad"><em>Keep informed</em><b>IT</b><b>Customer services</b></div>'
-        +'<div class="quad hot"><em>Key players</em><b>COO</b><b>Business development</b></div>'
-        +'<div class="quad"><em>Keep satisfied</em><b>Customers</b></div>'
-        +'<div class="quad"><em>Context setters</em><b>Operations</b><b>Finance</b></div>'
-        +'<span></span><span class="ax2">Power</span></div>'},
-    {t:'SODA maps', s:'Goals and options', h:'Six cognitive maps', p:'For each stakeholder group I linked practical options to strategies and strategies to goals, so every recommendation traced back to something people actually said. Here is a simplified version of the IT map.', q:'Different departments, different routes to the same goal.',
-      v:cmap+'<p class="maps-label">My original maps. Tap to open.</p><div class="maps">'+[['mapCOO','COO'],['mapBD','Business development'],['mapIT','IT'],['mapCS','Customer services']].map(function(m){return '<button type="button" class="zoomable" data-img="'+m[0]+'" data-cap="Cognitive map: '+m[1]+'"><img src="'+ACS_IMG[m[0]]+'" alt="Cognitive map for '+m[1]+'"><span>'+m[1]+'</span></button>';}).join('')+'</div>'},
-    {t:'Topic modelling', s:'Themes in the words', h:'LDA on the transcripts', p:'I transcribed and cleaned the interviews, then ran Latent Dirichlet Allocation to surface recurring themes: departmental dynamics, awareness, and support for equality initiatives.', q:'A coherence score of 0.28 said the themes were emerging, but not yet sharp. Honest about the limits.',
-      v:'<button type="button" class="zoomable kit-img" data-img="cloud" data-cap="Word cloud of major themes across the interviews"><img src="'+ACS_IMG.cloud+'" alt="Word cloud of major themes in the ACS interviews"></button><div class="lda">'+[['gender',172],['department',157],['female',111],['equality',111],['team',101],['women',96],['aware',70],['customer',70]].map(function(r){return '<div class="bar"><span>'+r[0]+'</span><div class="track2"><div class="fill" data-w="'+(r[1]/172*100)+'"></div></div><span class="v">.0'+r[1]+'</span></div>';}).join('')+'</div>'}
+    {t:'Interviews', s:'Listen to people', h:'11 conversations across the company',
+     plain:'I spoke one to one with 11 staff from five departments and the Chief Operating Officer, asking how they experience gender equality at work.',
+     told:'The will to improve was there. What was missing was time, focus and awareness of what already existed.',
+     v:'<div class="big-n"><div><b>11</b><span>interviews</span></div><div><b>5</b><span>departments</span></div><div><b>1</b><span>COO</span></div></div><p class="kit-cap">Every participant gave consent and stayed anonymous.</p>'},
+    {t:'Gap analysis', s:'Today vs goal', h:'17 gaps, each with someone to fix it',
+     plain:'For each problem, I wrote down where ACS is today, where it wants to be, and which team should close the gap. That turns complaints into a to do list.',
+     told:'The biggest gaps were in leadership, awareness and keeping senior women.',
+     v:'<div class="gtable"><div class="gth"><span>Today</span><span>Where ACS wants to be</span><span>Who fixes it</span></div>'
+       +'<div class="gtr"><span>10% of leaders are women</span><span>A balanced leadership team</span><i>HR and leadership</i></div>'
+       +'<div class="gtr"><span>Staff unaware of the policies</span><span>Everyone knows what support exists</span><i>HR</i></div>'
+       +'<div class="gtr"><span>Senior roles hired from outside</span><span>Clear paths to promote from within</span><i>HR and leadership</i></div>'
+       +'<div class="gtr"><span>Senior women leaving</span><span>Know why, and keep them</span><i>HR</i></div></div>'},
+    {t:'Stakeholder grid', s:'Who to involve', h:'Who needed to be won over',
+     plain:'I placed each group on a grid by how much influence they have over the change and how much they care about it. That shows who to involve closely and who just needs updates.',
+     told:'The COO and business development team were the ones to win over first.',
+     v:'<div class="grid2 plain"><span class="ax">Cares a lot \u2191</span>'
+       +'<div class="quad"><em>Keep updated</em><b>IT</b><b>Customer services</b></div>'
+       +'<div class="quad hot"><em>Win them over first</em><b>COO</b><b>Business development</b></div>'
+       +'<div class="quad"><em>Keep happy</em><b>Customers</b></div>'
+       +'<div class="quad"><em>Consult on key decisions</em><b>Operations</b><b>Finance</b></div>'
+       +'<span></span><span class="ax2">More influence \u2192</span></div>'},
+    {t:'Cognitive maps', s:'Each team\u2019s view', h:'How each team sees the fix',
+     plain:'For each team, I drew a map linking what they want (the goal) to how to get there (the strategy) and practical first steps. Arrows show what leads to what.',
+     told:'Every team wanted the same outcome, but each needed a different route. IT needs recruitment help, customer services needs leadership training.',
+     v:cmap+'<p class="maps-label">My original maps. Tap one to open it.</p><div class="maps">'+[['mapCOO','COO'],['mapBD','Business development'],['mapIT','IT'],['mapCS','Customer services']].map(function(m){return '<button type="button" class="zoomable" data-img="'+m[0]+'" data-cap="Cognitive map: '+m[1]+'"><img src="'+ACS_IMG[m[0]]+'" alt="Cognitive map for '+m[1]+'"><span>'+m[1]+'</span></button>';}).join('')+'</div>'},
+    {t:'Word analysis', s:'What people said most', h:'What people talked about most',
+     plain:'I used software to read every interview transcript and find which words kept coming up together. Bigger words in the cloud were mentioned more often.',
+     told:'People talked about gender through their own department and team, so the recommendations work team by team.',
+     v:'<button type="button" class="zoomable kit-img" data-img="cloud" data-cap="Word cloud of the most mentioned words across the interviews"><img src="'+ACS_IMG.cloud+'" alt="Word cloud of the most mentioned words in the ACS interviews"></button><p class="maps-label">Most mentioned words</p><div class="lda">'+[['gender',172],['department',157],['female',111],['equality',111],['team',101],['women',96]].map(function(r,i){return '<div class="bar"><span>'+r[0]+'</span><div class="track2"><div class="fill" data-w="'+(r[1]/172*100)+'"></div></div><span class="v">#'+(i+1)+'</span></div>';}).join('')+'</div>'}
   ];
   var kitSteps = document.getElementById('kitSteps'), kitPanel = document.getElementById('kitPanel');
   function showK(n){
     var k = kit[n];
     kitSteps.querySelectorAll('button').forEach(function(b,i){ b.setAttribute('aria-selected', i===n); });
-    kitPanel.innerHTML = '<div class="say2"><h5>'+k.h+'</h5><p>'+k.p+'</p><p class="q">'+k.q+'</p></div><div>'+k.v+'</div>';
+    kitPanel.innerHTML = '<div class="say2"><h5>'+k.h+'</h5><div class="plainbox"><small>In plain English</small><p>'+k.plain+'</p></div><div class="toldbox"><small>What it told us</small><p>'+k.told+'</p></div></div><div>'+k.v+'</div>';
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ kitPanel.querySelectorAll('.fill').forEach(function(f){ f.style.width = f.dataset.w + '%'; }); }); });
   }
   kit.forEach(function(k,i){ var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.innerHTML='<b>'+k.t+'</b><span>'+k.s+'</span>'; b.onclick=function(){showK(i)}; kitSteps.appendChild(b); });
@@ -1748,65 +1821,55 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
       (function tick(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/1200); el.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString('en-GB'); if(p<1)requestAnimationFrame(tick); })(performance.now()); }); },{threshold:.5});
   kio.observe(document.querySelector('.debt-kpis'));
 
-  /* Delivery clustering demo */
-  var svg = document.getElementById('map');
-  var seed = 7; function rnd(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-  var shop = {x:300, y:170};
-  var centres = [{x:110,y:80},{x:480,y:90},{x:140,y:265},{x:470,y:260}];
-  var colours = ['#F7D44C','#A8E0CD','#C3DAF7','#F6BFCB'];
-  var pts = [];
-  centres.forEach(function(c){
-    for (var i = 0; i < 9; i++){
-      var a = rnd() * Math.PI * 2, r = 12 + rnd() * 48;
-      pts.push({x: c.x + Math.cos(a) * r, y: c.y + Math.sin(a) * r * .8});
-    }
-  });
-  /* k-means */
-  var k = centres.map(function(_, i){ return {x: pts[i * 9].x, y: pts[i * 9].y}; });
-  for (var it = 0; it < 12; it++){
-    pts.forEach(function(p){
-      var best = 0, bd = 1e9;
-      k.forEach(function(c, j){ var d = (p.x - c.x) * (p.x - c.x) + (p.y - c.y) * (p.y - c.y); if (d < bd){ bd = d; best = j; } });
-      p.g = best;
-    });
-    k = k.map(function(c, j){
-      var m = pts.filter(function(p){ return p.g === j; });
-      if (!m.length) return c;
-      return {x: m.reduce(function(s, p){ return s + p.x; }, 0) / m.length, y: m.reduce(function(s, p){ return s + p.y; }, 0) / m.length};
-    });
-  }
-  function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for (var a in attrs) e.setAttribute(a, attrs[a]); (parent || svg).appendChild(e); return e; }
-  var gHalo = el('g', {}), gBefore = el('g', {class:'route'}), gAfter = el('g', {class:'route', opacity:0}), gPts = el('g', {});
-  var halos = k.map(function(c, j){
-    var r = Math.max.apply(null, pts.filter(function(p){ return p.g === j; }).map(function(p){ return Math.hypot(p.x - c.x, p.y - c.y); })) + 16;
-    return el('circle', {class:'halo', cx:c.x, cy:c.y, r:0, 'data-r':r, fill:colours[j], 'fill-opacity':.14, stroke:colours[j], 'stroke-dasharray':'5 5', opacity:0}, gHalo);
-  });
-  pts.forEach(function(p){ el('line', {x1:shop.x, y1:shop.y, x2:p.x, y2:p.y, stroke:'#9FB0C2', 'stroke-opacity':.35, 'stroke-width':1.2}, gBefore); });
-  k.forEach(function(c, j){
-    el('line', {x1:shop.x, y1:shop.y, x2:c.x, y2:c.y, stroke:colours[j], 'stroke-width':4, 'stroke-linecap':'round'}, gAfter);
-    pts.filter(function(p){ return p.g === j; }).forEach(function(p){ el('line', {x1:c.x, y1:c.y, x2:p.x, y2:p.y, stroke:colours[j], 'stroke-opacity':.6, 'stroke-width':1.2}, gAfter); });
-  });
-  var dots = pts.map(function(p){ return el('circle', {class:'pt', cx:p.x.toFixed(1), cy:p.y.toFixed(1), r:5, fill:'#E8EEF3', stroke:'#15222F', 'stroke-width':1.5}, gPts); });
-  el('rect', {x:shop.x - 16, y:shop.y - 16, width:32, height:32, rx:6, fill:'#0E6B66', stroke:'#E8EEF3', 'stroke-width':2});
-  var lbl = el('text', {x:shop.x, y:shop.y + 36, 'text-anchor':'middle', fill:'#E8EEF3', 'font-size':13, 'font-family':'Public Sans, sans-serif', 'font-weight':600}); lbl.textContent = 'Shop';
-
-  var trips = document.getElementById('trips'), btn = document.getElementById('groupBtn'), grouped = false;
-  function countTo(n){
-    var from = +trips.textContent, t0 = null;
-    if (reduce){ trips.textContent = n; return; }
-    function step(t){ if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 700); trips.textContent = Math.round(from + (n - from) * p); if (p < 1) requestAnimationFrame(step); }
-    requestAnimationFrame(step);
-  }
-  trips.textContent = pts.length;
-  btn.addEventListener('click', function(){
-    grouped = !grouped;
-    gBefore.setAttribute('opacity', grouped ? 0 : 1);
-    gAfter.setAttribute('opacity', grouped ? 1 : 0);
-    halos.forEach(function(h){ h.setAttribute('opacity', grouped ? 1 : 0); h.setAttribute('r', grouped ? h.dataset.r : 0); });
-    dots.forEach(function(d, i){ d.setAttribute('fill', grouped ? colours[pts[i].g] : '#E8EEF3'); });
-    countTo(grouped ? k.length : pts.length);
-    btn.textContent = grouped ? 'Show single deliveries' : 'Group into delivery runs';
-  });
+  /* Delivery clustering demo (Blue Lagoon) */
+  (function(){
+    var sv=document.getElementById('map'); if(!sv) return;
+    function el(t,a,p){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); (p||sv).appendChild(e); return e; }
+    el('rect',{x:0,y:0,width:600,height:340,rx:10,fill:'#16232F'});
+    var roads=el('g',{stroke:'#243646','stroke-width':10,'stroke-linecap':'round',fill:'none'});
+    [[0,120,600,120],[0,235,600,235],[190,0,190,340],[410,0,410,340]].forEach(function(r){ el('line',{x1:r[0],y1:r[1],x2:r[2],y2:r[3]},roads); });
+    el('path',{d:'M0 40 C 150 60, 250 20, 600 50',stroke:'#243646','stroke-width':8,fill:'none'});
+    var shop={x:300,y:178};
+    var sd=21; function r(){ sd=(sd*9301+49297)%233280; return sd/233280; }
+    var zc=[[105,72],[495,70],[110,285],[490,285]], zcol=['#F7D44C','#A8E0CD','#CDB9F5','#F6BFCB'];
+    var H=[];
+    zc.forEach(function(c,z){ for(var i=0;i<6;i++){ var a=i/6*Math.PI*2+r()*.5, d=22+r()*18; H.push({x:c[0]+Math.cos(a)*d*1.3, y:c[1]+Math.sin(a)*d*.9, z:z}); } });
+    [[30,178],[572,178],[300,320]].forEach(function(p,i){ H.push({x:p[0],y:p[1],z:-1,o:i}); });
+    H.forEach(function(h){ h.d=Math.hypot(h.x-shop.x,h.y-shop.y); h.cold=h.d>228 || h.z===-1; });
+    var gHalo=el('g',{opacity:0,class:'mlayer'}), gBefore=el('g',{class:'mlayer'}), gAfter=el('g',{opacity:0,class:'mlayer'}), gHouses=el('g',{});
+    zc.forEach(function(c,z){ el('ellipse',{cx:c[0],cy:c[1],rx:72,ry:52,fill:zcol[z],'fill-opacity':.12,stroke:zcol[z],'stroke-dasharray':'5 5','stroke-width':2},gHalo);
+      var t=el('text',{x:c[0],y:c[1]-58,'text-anchor':'middle',fill:zcol[z],'font-size':12,'font-weight':700,'font-family':'Public Sans, sans-serif'},gHalo); t.textContent='Run '+(z+1)+': one trip'; });
+    var PC=['G74 1','G74 4','G75 8','G72 8'], OPC=['G75 9','G74 5','G72 0'], gPc=el('g',{});
+    zc.forEach(function(c,z){ var bx=el('g',{transform:'translate('+c[0]+' '+(c[1]+(c[1]<150?48:-44))+')'},gPc); el('rect',{x:-26,y:-11,width:52,height:20,rx:4,fill:'#0F1A24',stroke:'#4A5B6D'},bx); var tt=el('text',{y:4,'text-anchor':'middle','font-size':11,'font-weight':700,fill:'#E8EEF3','font-family':'Public Sans, sans-serif'},bx); tt.textContent=PC[z]; });
+    H.forEach(function(h){ el('line',{x1:shop.x,y1:shop.y,x2:h.x,y2:h.y,stroke:'#9FB0C2','stroke-opacity':.45,'stroke-width':1.3,'stroke-dasharray':'4 4'},gBefore); });
+    zc.forEach(function(c,z){ var hs=H.filter(function(h){return h.z===z;}).sort(function(a,b){ return Math.atan2(a.y-c[1],a.x-c[0])-Math.atan2(b.y-c[1],b.x-c[0]); });
+      var d='M'+shop.x+' '+shop.y+' '+hs.map(function(h){ return 'L'+h.x.toFixed(1)+' '+h.y.toFixed(1); }).join(' ')+' Z';
+      el('path',{d:d,fill:'none',stroke:zcol[z],'stroke-width':3,'stroke-linejoin':'round','stroke-opacity':.9},gAfter); });
+    H.filter(function(h){return h.z===-1;}).forEach(function(h){ el('line',{x1:shop.x,y1:shop.y,x2:h.x,y2:h.y,stroke:'#E8EEF3','stroke-width':2,'stroke-dasharray':'6 5'},gAfter);
+      var cg=el('g',{transform:'translate('+(h.x+14)+' '+(h.y-16)+')'},gAfter); el('circle',{r:8,fill:'#fff',stroke:'#15222F','stroke-width':1.5},cg); el('path',{d:'M0 -4 V0 L3 2',stroke:'#15222F','stroke-width':1.5,fill:'none'},cg); });
+    H.filter(function(h){return h.z===-1;}).forEach(function(h){ var bx=el('g',{transform:'translate('+(h.y>300?h.x-46:h.x)+' '+(h.y>300?h.y-2:h.y+24)+')'},gPc); el('rect',{x:-24,y:-10,width:48,height:18,rx:4,fill:'#0F1A24',stroke:'#4A5B6D'},bx); var tt=el('text',{y:3.5,'text-anchor':'middle','font-size':10.5,'font-weight':700,fill:'#E8EEF3','font-family':'Public Sans, sans-serif'},bx); tt.textContent=OPC[h.o]; });
+    var houses=H.map(function(h){ var g=el('g',{transform:'translate('+h.x.toFixed(1)+' '+h.y.toFixed(1)+') scale(1.35)'},gHouses);
+      var p=el('path',{d:'M-8 0 L0 -8 L8 0 V8 H-8 Z',stroke:'#15222F','stroke-width':1.6,'stroke-linejoin':'round'},g);
+      var st=el('path',{d:'M-3 -12 C -5 -15, -1 -17, -3 -20 M3 -12 C 1 -15, 5 -17, 3 -20',stroke:'#F9A64B','stroke-width':1.4,fill:'none',opacity:0},g);
+      return {p:p,st:st,h:h}; });
+    var sg=el('g',{transform:'translate('+shop.x+' '+shop.y+') scale(1.3)'});
+    el('rect',{x:-38,y:-20,width:76,height:40,rx:4,fill:'#0E6B66',stroke:'#E8EEF3','stroke-width':2},sg);
+    for(var i=0;i<6;i++){ el('rect',{x:-38+i*12.67,y:-28,width:12.67,height:9,fill:i%2?'#E8EEF3':'#2F6FD1'},sg); }
+    el('rect',{x:-10,y:2,width:20,height:18,fill:'#15222F'},sg);
+    var nm=el('text',{x:0,y:-4,'text-anchor':'middle','font-size':9.5,'font-weight':800,fill:'#fff','font-family':'Public Sans, sans-serif'},sg); nm.textContent='BLUE LAGOON';
+    var lb=el('text',{x:0,y:38,'text-anchor':'middle','font-size':12,'font-weight':600,fill:'#E8EEF3','font-family':'Public Sans, sans-serif'},sg); lb.textContent='Blue Lagoon shop';
+    var trips=document.getElementById('trips'), coldN=document.getElementById('coldN'), say=document.getElementById('coldSay');
+    function countTo(elm,n){ var from=+elm.textContent||0, t0=null; if(reduce){ elm.textContent=n; return; } (function step(t){ if(!t0)t0=t; var q=Math.min(1,(t-t0)/700); elm.textContent=Math.round(from+(n-from)*q); if(q<1) requestAnimationFrame(step); })(performance.now()); }
+    function set(mode){ var after=mode==='after';
+      document.querySelectorAll('.cold-toggle button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.m===mode); });
+      gBefore.setAttribute('opacity',after?0:1); gAfter.setAttribute('opacity',after?1:0); gHalo.setAttribute('opacity',after?1:0);
+      var cold=0; houses.forEach(function(o){ var c=!after && o.h.cold; if(c) cold++; o.p.setAttribute('fill', c?'#7FB3E8':'#F9A64B'); o.st.setAttribute('opacity', c?0:1); });
+      countTo(trips, after?4+3:H.length); countTo(coldN, cold);
+      say.textContent = after ? 'After: orders in the same postcode area, like G74 1 or G75 8, go out together as one run. Far away orders, like G72 0, get extra time planned in. Fewer trips, and orders arrive hot.'
+                              : 'Before: orders went out one by one as they came in. Drivers criss-crossed the area, orders waited, and those further away arrived cold.'; }
+    document.querySelectorAll('.cold-toggle button').forEach(function(b){ b.onclick=function(){ set(b.dataset.m); }; });
+    set('before');
+  })();
 
   /* ACS infographic pins and lightbox */
   document.getElementById('infoImg').src=ACS_IMG.info;
@@ -1901,37 +1964,66 @@ footer{padding:3rem 0; color:var(--muted); font-size:.9rem}
   document.querySelectorAll('.thread-link').forEach(function(t){ if(reduce) t.classList.add('drawn'); else tio.observe(t); });
 
 
-  /* ===== ACS morph ===== */
+  /* ===== ACS morph (dots, explained) ===== */
   (function(){
     var sv=document.getElementById('morphSvg'); if(!sv) return;
-    var N=12, gs=[], cols=['#CDB9F5','#F7D44C','#9ED8E6'];
-    var theme=[0,0,0,0,1,1,1,1,2,2,2,2];
-    var net=[[90,70],[170,40],[250,90],[330,50],[410,85],[500,45],[560,110],[120,170],[220,200],[320,160],[430,210],[540,220]];
-    var edges=[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[0,7],[7,8],[8,9],[9,2],[9,10],[10,11],[6,11],[4,9],[1,8]];
-    var L={0:[],1:[],2:[],3:[]}, lay=[net,[],[],[]];
-    var tc=[[140,140],[320,140],[500,140]];
-    for(var i=0;i<N;i++){ var t=theme[i], k=i%4, a=k*Math.PI/2+.6; lay[1].push([tc[t][0]+Math.cos(a)*38, tc[t][1]+Math.sin(a)*38]); }
-    for(i=0;i<N;i++){ lay[2].push([250+(i%3)*120, 70+Math.floor(i/3)*55]); }
-    var ms=[110,250,390,530]; for(i=0;i<N;i++){ var m=Math.floor(i/3); lay[3].push([ms[m], 130-(i%3)*28]); }
+    var F=[
+      ['Only 10% of leaders are women',0,1,0],
+      ['Senior women have left, and nobody knows why',0,0,0],
+      ['Senior roles go to outside hires, not internal staff',0,1,0],
+      ['Men\u2019s voices carry more weight at the top',0,2,2],
+      ['Many staff didn\u2019t know the equality policies existed',1,0,1],
+      ['The benefits of diversity are rarely discussed',1,1,2],
+      ['No surveys ask staff about equality',1,0,3],
+      ['Targets exist but don\u2019t drive action',1,0,3],
+      ['Some teams are almost all one gender',2,3,1],
+      ['People feel more at ease with their own gender',2,4,1],
+      ['No plan to bring women into IT',2,0,2],
+      ['Weekend work with no time off in one team',2,4,1]
+    ];
+    var TH=[['Who gets to lead','#B79CF2'],['Do people know the plan','#F7C948'],['How teams feel day to day','#4FC3B7']];
+    var OWN=['HR','HR and leadership','Leadership','Recruitment','Team leaders'];
+    var RECS=['Leadership pipeline','Inclusive teams','Women leading sustainability','Measure and adapt'];
+    var NOTES=['Step 1, listen. Eleven interviews across six groups. Each dot is one finding. They start out white because nothing is sorted yet.',
+      'Step 2, group into themes. Findings that talk about the same kind of problem move together. The colour now tells you the theme.',
+      'Step 3, assign owners. Each finding is lined up under the team responsible for fixing it. The colour still shows its theme.',
+      'Step 4, recommend. The findings roll up into four recommendations for the COO. The dots above each one are the findings it answers.'];
     function el(t,a,p){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); (p||sv).appendChild(e); return e; }
-    var layers=[el('g',{class:'mlayer'}),el('g',{class:'mlayer',opacity:0}),el('g',{class:'mlayer',opacity:0}),el('g',{class:'mlayer',opacity:0})];
-    edges.forEach(function(e){ el('line',{x1:net[e[0]][0],y1:net[e[0]][1],x2:net[e[1]][0],y2:net[e[1]][1],stroke:'#4A5B6D','stroke-width':1.4},layers[0]); });
-    [['COO',500,20],['Finance',80,40],['Operations',330,25],['IT',575,140],['Customer services',120,240],['Business development',430,245]].forEach(function(t){ var x=el('text',{x:t[1],y:t[2],fill:'#9FB0C2','font-size':11,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},layers[0]); x.textContent=t[0]; });
-    ['Departmental dynamics','Awareness and perception','Initiatives and support'].forEach(function(t,j){ var x=el('text',{x:tc[j][0],y:215,fill:'#E8EEF3','font-size':13,'font-weight':600,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},layers[1]); x.textContent=t; el('circle',{cx:tc[j][0],cy:tc[j][1],r:62,fill:'none',stroke:cols[j],'stroke-dasharray':'4 5',opacity:.6},layers[1]); });
-    ['HR','Senior management','Recruitment'].forEach(function(t,j){ var x=el('text',{x:250+j*120,y:36,fill:'#9FB0C2','font-size':11,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},layers[2]); x.textContent=t; });
-    ['Awareness','Leadership pipeline','Retention','Recruitment'].forEach(function(t,j){ var x=el('text',{x:160,y:74+j*55,fill:'#E8EEF3','font-size':12,'font-family':'Public Sans, sans-serif','text-anchor':'end'},layers[2]); x.textContent=t; el('line',{x1:170,x2:600,y1:70+j*55+27,y2:70+j*55+27,stroke:'#2C3B4B'},layers[2]); });
-    el('line',{x1:60,x2:590,y1:175,y2:175,stroke:'#CDB9F5','stroke-width':3,'stroke-linecap':'round'},layers[3]);
-    ['Leadership pipelines','Inclusive culture','Women in sustainability','Continuous learning'].forEach(function(t,j){ el('circle',{cx:ms[j],cy:175,r:9,fill:'#15222F',stroke:'#CDB9F5','stroke-width':3},layers[3]); var x=el('text',{x:ms[j],y:205,fill:'#E8EEF3','font-size':12,'font-weight':600,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},layers[3]); x.textContent=t; var y=el('text',{x:ms[j],y:224,fill:'#9FB0C2','font-size':10.5,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},layers[3]); y.textContent='Priority '+'ABCD'.charAt(j); });
-    for(i=0;i<N;i++){ var g=el('g',{class:'mdot'}); g.style.transform='translate('+net[i][0]+'px,'+net[i][1]+'px)'; el('circle',{r:9,fill:'#E8EEF3',stroke:'#15222F','stroke-width':2},g); gs.push(g); }
-    var notes=['Eleven interviews across six stakeholder groups. At this point, every finding is still tied to who said it.','LDA topic modelling and the cognitive maps pulled the findings into three recurring themes.','Each theme became specific gaps, and every gap got an owner and an action.','The gaps rolled up into four prioritised recommendations for the COO.'];
-    var steps=document.querySelectorAll('#morphSteps button'), cur=0, timer=null;
-    function go(k){ cur=k; steps.forEach(function(b,j){ b.setAttribute('aria-selected', j===k); });
+    var T=function(p,x,y,txt,o){ var e=el('text',Object.assign({x:x,y:y,fill:'#E8EEF3','font-size':12,'font-family':'Public Sans, sans-serif','text-anchor':'middle'},o||{}),p); e.textContent=txt; return e; };
+    var net=[[90,80],[170,50],[250,100],[330,60],[410,95],[500,55],[565,125],[120,185],[220,215],[320,175],[430,225],[545,235]];
+    var edges=[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[0,7],[7,8],[8,9],[9,2],[9,10],[10,11],[6,11],[4,9],[1,8]];
+    var L0=el('g',{class:'mlayer'}),L1=el('g',{class:'mlayer',opacity:0}),L2=el('g',{class:'mlayer',opacity:0}),L3=el('g',{class:'mlayer',opacity:0});
+    edges.forEach(function(e){ el('line',{x1:net[e[0]][0],y1:net[e[0]][1],x2:net[e[1]][0],y2:net[e[1]][1],stroke:'#4A5B6D','stroke-width':1.4},L0); });
+    T(L0,320,300,'Findings from 11 interviews, not yet sorted',{fill:'#9FB0C2','font-size':13});
+    var tc=[[120,150],[320,150],[520,150]];
+    TH.forEach(function(t,j){ el('circle',{cx:tc[j][0],cy:tc[j][1],r:78,fill:t[1],'fill-opacity':.1,stroke:t[1],'stroke-width':2,'stroke-dasharray':'5 5'},L1); T(L1,tc[j][0],265,t[0],{'font-weight':700,'font-size':13}); });
+    var ox=[70,195,320,445,570];
+    OWN.forEach(function(o,j){ el('rect',{x:ox[j]-55,y:52,width:110,height:250,rx:10,fill:'#15222F',stroke:'#2C3B4B'},L2); T(L2,ox[j],40,o,{'font-weight':700,'font-size':12}); });
+    var ms=[95,245,395,545];
+    el('line',{x1:40,x2:600,y1:250,y2:250,stroke:'#F7D44C','stroke-width':3,'stroke-linecap':'round'},L3);
+    RECS.forEach(function(t,j){ el('circle',{cx:ms[j],cy:250,r:9,fill:'#15222F',stroke:'#F7D44C','stroke-width':3},L3); T(L3,ms[j],280,t,{'font-weight':700,'font-size':12.5}); T(L3,ms[j],298,'Recommendation '+'ABCD'.charAt(j),{fill:'#9FB0C2','font-size':10.5}); });
+    var lay=[net,[],[],[]], tcount=[0,0,0], ocount=[0,0,0,0,0], rcount=[0,0,0,0];
+    F.forEach(function(f){ var k=tcount[f[1]]++, a=k*Math.PI/2+.8; lay[1].push([tc[f[1]][0]+Math.cos(a)*40, tc[f[1]][1]+Math.sin(a)*40]);
+      var o=ocount[f[2]]++; lay[2].push([ox[f[2]], 82+o*44]);
+      var r=rcount[f[3]]++; lay[3].push([ms[f[3]], 222-r*38]); });
+    var gs=F.map(function(f,i){ var g=el('g',{class:'mdot',tabindex:0,role:'button','aria-label':'Finding '+(i+1)+': '+f[0]});
+      el('circle',{r:14,fill:'#E8EEF3',stroke:'#15222F','stroke-width':2.5},g);
+      var t=el('text',{y:5,'text-anchor':'middle','font-size':12,'font-weight':800,fill:'#172433','font-family':'Public Sans, sans-serif'},g); t.textContent=i+1;
+      g.addEventListener('click',function(){ sel(i); }); g.addEventListener('mouseenter',function(){ sel(i); }); g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sel(i); } });
+      return g; });
+    var layers=[L0,L1,L2,L3], cur=0, picked=0, timer=null;
+    var legend=document.getElementById('mLegend'), find=document.getElementById('mFind');
+    function drawLegend(){ legend.innerHTML = cur===0 ? '<span><i style="background:#E8EEF3"></i>Unsorted finding</span>' : TH.map(function(t){ return '<span><i style="background:'+t[1]+'"></i>'+t[0]+'</span>'; }).join(''); }
+    function sel(i){ picked=i; var f=F[i]; gs.forEach(function(g,j){ g.firstChild.setAttribute('stroke', j===i?'#FFFFFF':'#15222F'); g.firstChild.setAttribute('stroke-width', j===i?4:2.5); });
+      var extra = cur===0 ? '' : cur===1 ? 'Theme: '+TH[f[1]][0] : cur===2 ? 'Owner: '+OWN[f[2]] : 'Answered by: '+RECS[f[3]];
+      find.innerHTML='<b style="background:'+(cur===0?'#E8EEF3':TH[f[1]][1])+'">'+(i+1)+'</b><div><p>\u201C'+f[0]+'\u201D</p>'+(extra?'<span>'+extra+'</span>':'')+'</div>'; }
+    function go(k){ cur=k; document.querySelectorAll('#morphSteps button').forEach(function(b,j){ b.setAttribute('aria-selected', j===k); });
       layers.forEach(function(l,j){ l.setAttribute('opacity', j===k?1:0); });
-      gs.forEach(function(g,i){ var p=lay[k][i]; g.style.transform='translate('+p[0]+'px,'+p[1]+'px)'; g.firstChild.setAttribute('fill', k===0?'#E8EEF3':cols[theme[i]]); g.firstChild.setAttribute('r', k===2?8:9); });
-      document.getElementById('morphNote').textContent=notes[k]; }
-    steps.forEach(function(b,j){ b.onclick=function(){ clearInterval(timer); go(j); }; });
+      gs.forEach(function(g,i){ var p=lay[k][i]; g.style.transform='translate('+p[0]+'px,'+p[1]+'px)'; g.firstChild.setAttribute('fill', k===0?'#E8EEF3':TH[F[i][1]][1]); });
+      document.getElementById('morphNote').textContent=NOTES[k]; drawLegend(); sel(picked); }
+    document.querySelectorAll('#morphSteps button').forEach(function(b,j){ b.onclick=function(){ clearInterval(timer); timer='stopped'; go(j); }; });
     go(0);
-    var mio=new IntersectionObserver(function(e){ if(e[0].isIntersecting && !reduce && !timer){ timer=setInterval(function(){ if(cur>=3){ clearInterval(timer); return; } go(cur+1); },2600); } },{threshold:.6});
+    var mio=new IntersectionObserver(function(e){ if(e[0].isIntersecting && !reduce && !timer){ timer=setInterval(function(){ if(cur>=3){ clearInterval(timer); timer='done'; return; } go(cur+1); },4200); } },{threshold:.5});
     mio.observe(sv);
   })();
 
